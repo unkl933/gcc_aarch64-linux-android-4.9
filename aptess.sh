@@ -18,6 +18,7 @@ then
 fi
 cd ..
 DIR_TOOLCHAIN="$(pwd)/gcc_aarch64-linux-android-4.9"
+DIR_TOOLCHAIN32="$(pwd)/gcc_arm-linux-androideabi-4.9"
 cd /
 cd $DIR_KERNEL
 unset errortoolchain
@@ -28,8 +29,8 @@ case "$x" in
 
  #################### GOOGLE ####################
 
-	1 ) export CROSS_COMPILE="${DIR_TOOLCHAIN}/google_gcc/aarch64-linux-android-4.9/bin/aarch64-linux-android-";
-	    export CROSS_COMPILE_ARM32="${DIR_TOOLCHAIN}/google_gcc/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-";
+	1 ) export CROSS_COMPILE="${DIR_TOOLCHAIN}/bin/aarch64-linux-android-";
+	    export CROSS_COMPILE_ARM32="${DIR_TOOLCHAIN32}/bin/arm-linux-androideabi-";
         export TARGET_CC="gcc";
         ToolchainName="Google";
         ToolchainCompile="Google GCC 4.9.0";;
